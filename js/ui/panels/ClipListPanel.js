@@ -163,7 +163,7 @@ var ui;
                         "vertical-align": "bottom"
                     }).appendTo($imgContainer);
                     if (_this.viewClipUrl) {
-                        $("<a href='" + _this.viewClipUrl + "?id=" + clip.ID + " '>" + clip.name + "<br/>" + (clip.userFields ? clip.userFields.U6 : "") + "</a>").css({
+                        $("<a href='" + _this.viewClipUrl + "?id=" + clip.ID + " '>" + clip.name + "<br/>" + (clip.userFields && clip.userFields.U6 ? clip.userFields.U6 : "") + "</a>").css({
                             "display": "block",
                             "overflow": "hidden",
                             "white-space": "nowrap"
