@@ -67,7 +67,7 @@ var logic;
         /** The columns for a concise view (text only). */
         ViewManager.DEFAULT_CONCISE_COLUMNS = [
             "TY2",
-            "U5",
+            "U6",
             "I1",
             "O1",
             "D1",
