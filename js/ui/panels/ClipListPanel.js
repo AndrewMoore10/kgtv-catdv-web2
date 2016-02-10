@@ -462,6 +462,11 @@ var ui;
                 params["cached"] = this.useCache;
                 // TODO: should check which view columns we have to see if we need user fields or metadata
                 params["include"] = "userFields,metadata,thumbnails";
+                
+                if(params.sortDir){}
+                else if(params.sortDir === "ASC") params.asc = params.sortBy;
+                else if(params.sortDir === "DESC") params.desc = params.sortBy;
+
                 $catdv.getClips(params, function (resultSet) {
                     _this.useCache = true;
                     callback(resultSet);
