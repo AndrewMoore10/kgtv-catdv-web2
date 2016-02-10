@@ -168,7 +168,7 @@ var logic;
             this.viewClipUrl = viewClipUrl;
         }
         NameColumn.prototype.render = function (clip) {
-            return this.viewClipUrl ? "<a href='" + this.viewClipUrl + "?id=" + clip.ID + " '>" + clip.name + "<br/>" + (clip.userFields ? clip.userFields.U6 : "") + "</a>" : clip.name;
+            return this.viewClipUrl ? "<a href='" + this.viewClipUrl + "?id=" + clip.ID + " '>" + clip.name + "</a>" : clip.name;
         };
         return NameColumn;
     })(ViewColumn);
