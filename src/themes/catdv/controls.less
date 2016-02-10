@@ -1,0 +1,368 @@
+//
+// CatDV controls
+// --------------------------------------------------
+
+/******** Bootsrap Overrides *********/
+
+.input-sm {
+    height: 24px;
+}
+
+select.input-sm, .form-horizontal .form-group-sm select.form-control.input-sm {
+	height: 24px;
+	line-height: 24px;
+	padding: 0px;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  line-height:normal;
+}
+
+/*
+.navbar-nav > li > .dropdown-menu {
+	white-space: nowrap;
+	padding: 4px;
+	margin-top: -10px;
+}
+*/
+
+
+/******** AutoSuggest / MultiSelect-DropDownList Control ********/
+
+.dropdown-list {
+    position: relative;
+    margin: 0px;
+
+    > .input  {
+        display: inline-block;
+        position: relative;
+        
+        input.preview {
+            color: fade(@text-color, 33%);
+        }
+        
+        > .arrow {
+            position: absolute;
+            border-width: 6px 4px;
+            border-style: solid;
+            border-color: transparent;
+            border-top-color: @input-color;
+            top: 8px;
+            right: 4px;
+        }
+    }
+    
+    > .popup {      
+        position: absolute;
+        border: 1px solid @input-border;
+        background: @dropdown-bg;
+        margin: 0px;
+        padding: 4px;
+        max-height: 400px;
+        overflow: scroll;
+        overflow-x: hidden;
+        z-index: 1500;
+        
+        > .item {
+            &:hover {
+                background-color: @input-border;
+            }
+            &.selected {
+                background-color: @selected-color; 
+            }
+            a {
+                 text-decoration: none;
+                 color: inherit;
+                 display: inline-block;
+                 width: 100%;
+            }
+        }        
+    }
+}
+
+/******* Paging Controls - shared by DataTable and ClipList views *******/
+
+ul.paging {
+	display: inline-block;
+	margin: 10px 20px;
+	float: right;
+	
+	li {
+		display: inline;
+		margin: 4px 10px 4px 10px;
+		
+		&:last-child {
+			
+			margin-right:0;
+			
+		}
+	}	
+}
+
+
+/******** TreeView ********/
+
+div.treeView {
+	overflow: auto;
+	overflow-x: hidden;
+	
+	ul {
+		list-style: none;
+		padding-left: 0px;
+		
+		> li {
+			cursor: pointer;
+			border-top: 1px solid @gray-lighter;
+			padding: 10px 0;
+			margin: 0px;
+			
+			.discloser {
+				font-size: 10px;
+				color: #FFF;
+				top: -1px;
+				
+				&.glyph-rotate-90{
+					top: 1px;
+					left: 1px;
+				}
+				&:hover {
+					color: @link-hover-color;
+				}
+			}
+			
+			span.nodeLabel {
+				
+				color: #FFF;
+				
+				&.root {
+					display:block;
+			  	  text-transform: uppercase;
+				  color: @black;
+				  height: @catdv-icon-default-size;
+				  line-height: @catdv-icon-default-size;
+				  
+				  > .catdvicon-expand {
+					  color: #FFF;
+					  .rotate(180deg);
+				  }				  
+				}
+				
+				&.selected {					
+                    background-color: lighten(@selected-color, 20%); /* Fallback for browsers without transparency */
+	                background-color: fade(@selected-color, 20%);
+				}
+				
+				&:hover {
+					color: @link-hover-color !important;
+  				  > .catdvicon-expand {
+  					  color: @link-hover-color;
+  				  }					
+				}
+			}
+			a.editControl {
+			     margin-left: 6px;
+			     font-size: smaller;
+			     
+			     &:hover {
+                      color: @link-hover-color;
+			     }
+			}
+			
+			&.closed {
+				
+				span.nodeLabel.root {
+					> .catdvicon-expand {
+						.rotate(0deg);
+					}
+				}
+			}
+		}
+		
+		li.leaf {
+			padding-left: 12px;
+			
+			a.editControl {
+			     display: none;
+			}
+			
+			&:hover a.editControl  {
+                 display: inline;
+            }
+		}
+		
+		&.indented {
+			margin: 5px 0 10px 15px;
+			padding-left: 12px;
+			li {
+				padding: 0;
+				border-top: none;
+				
+				
+			}
+		}
+	}	
+} 
+
+/******** Draggable ListBox ********/
+
+div.listbox {
+    overflow: auto; 
+    overflow-x: hidden; 
+	
+	&.dragover
+	{
+	    background-color: fade(@selected-color, 20%);
+	}
+
+	ul {
+		padding-left: 0px;
+	}
+
+	li {
+	    list-style: none;
+		&.selected {
+		    background-color: fade(@selected-color, 20%);
+		}
+	
+	}
+	
+}
+
+
+/******** DataTable Control Styles ********/
+
+
+div.dt-wrapper,
+div.dt-header,
+div.dt-footer,
+table.dt-table,
+table.dt-table thread,
+table.dt-table tbody,
+table.dt-table tr
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+div.dt-wrapper {
+    height: 100%;
+    position: relative;
+    padding-bottom: 28px; /* height of footer */
+}
+
+table.dt-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    th,
+    td {
+        padding: 2px 4px;
+        overflow: hidden;
+        .unselectable();
+    }
+    thead > tr > th {
+        vertical-align: bottom;
+        white-space: nowrap;
+    }
+}
+
+div.dt-header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    > .dt-table {
+        > thead {
+            > tr {
+                > th {
+                    padding:8px;
+                    position: relative;
+                    cursor: default;
+                    white-space: nowrap;
+                }
+                > .sortable {
+                    cursor: pointer;
+                }
+                > .sortAsc::after {
+                    content: "";
+                    position: absolute;
+                    right: 4px;
+                    top: 11px;
+                    width: 0px;
+                    height: 0px;
+                    border: 4px solid transparent;
+                    border-bottom-color: @text-color;
+                    box-sizing: ;               }
+                > .sortDesc::after {
+                    content: "";
+                    position: absolute;
+                    right: 4px;
+                    top: 15px;
+                    width: 0px;
+                    height: 0px;
+                    border: 4px solid transparent;
+                    border-top-color: @text-color;
+                    box-sizing: ;
+                }
+            }
+        }
+    }
+}
+
+div.dt-body {
+    height: 100%;
+    overflow: auto;
+    
+    > .dt-table {
+        > thead {
+            > tr {
+                > th {
+                    padding:8px;
+                }
+            }
+        }
+        > tbody {
+            > tr {
+                > td {
+                    padding:8px;
+                    border-top:1px solid @table-border-color;
+                }
+                &:first-child {
+                    > td {
+                        border-top:none;
+                    }
+                }
+                &:hover {
+                    > td {
+                        background-color: fade(@selected-color, 7%);
+                    }
+                }
+                &.selected, &.selected:hover {
+                    > td {
+                        background-color: lighten(@selected-color, 20%); /* Fallback for browsers without transparency */
+                        background-color: fade(@selected-color, 20%);
+                    }
+                }
+                
+            }
+        }
+        
+    }
+}
+
+div.dt-spacer {
+    height: 1px;
+}
+
+div.dt-footer {
+    position: absolute;
+    width: 100%;
+    height: 28px;
+    bottom: 0;
+}
+
+
+

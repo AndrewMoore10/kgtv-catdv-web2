@@ -1,0 +1,141 @@
+//
+// CatDV admin
+// --------------------------------------------------
+
+
+.adminListPage {
+	
+	> div.content {
+		left: 100px;
+		right: 100px;
+		padding: 0;
+		overflow:hidden;
+	}
+		
+		
+	div.adminList {
+		position: absolute;
+		top: 60px; /* leave room for h1 title */
+		width: 100%;
+		bottom: 6px;
+	}
+	
+	footer {
+		position: absolute;
+		bottom: 0px;
+		height: 60px;
+		width: 100%;
+		padding: 10px 100px;
+		text-align: right;
+	}
+}
+
+.panelVisibilityList {
+    height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+    
+    ul {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    li {
+        margin: 0px;
+        font-weight: bold;
+        cursor: pointer;
+        
+        &.selected {
+            background-color: fade(@selected-color, 20%);
+        }
+        
+        .discloser {
+            font-size: 10px;
+        }
+    }
+
+    ul.filters {
+        padding-left: 12px;
+        
+        li {
+            font-weight: normal;
+            font-size: small;
+            margin-left: 12px;
+            
+            &.filterHeader {
+                font-style: italic;
+                font-size: smaller;
+                margin-left: 0px;
+            }
+
+            &.emptyMessage {
+                font-weight: normal;
+                color: @gray;
+            }
+        }       
+    }
+}
+
+
+#mediaStoreList {
+	height: 500px;
+	width: 90%;
+	overflow: auto;
+	overflow-x: hidden;
+	border: 1px solid @gray-light;
+	padding: 10px;
+	margin-bottom: 16px;
+	
+	span.itemLabel {
+		
+		&.selected {
+			background-color: fade(@selected-color, 20%);
+		}
+		
+		.info {
+			font-style: italic;
+			color: @gray-dark;
+		}
+
+	}
+
+	span.mediaStore {
+		font-size: 17px;
+	}
+
+	li.mediaType {
+		font-style: italic;
+		color: @gray-dark;
+		padding-left: 20px;
+		
+		.glyphicon {
+			font-size: 12px;
+		}
+	}
+
+	li.mediaPath {
+		padding-left: 40px;
+	}
+	
+}
+
+div.group-box
+{
+	border-width: 1px;
+	border-style: solid;
+	border-color: @gray-dark;
+	margin-top: 20px;
+	padding: 18px 8px 12px 8px;
+    position: relative;
+    background-color: inherit;
+	
+	h5
+	{
+	    position: absolute;
+		top: -18px;
+		font-weight: bold;
+		background-color: inherit;
+	    padding: 0px 4px 0px 4px;
+		background-color: @modal-content-bg;
+	}
+}

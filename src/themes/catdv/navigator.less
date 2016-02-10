@@ -1,0 +1,133 @@
+//
+// CatDV navigator
+// --------------------------------------------------
+
+.popout-panel-style () {
+	
+	#gradient > .horizontal(@panel-color; fade(@panel-color,95%); 0%; 50%;);
+
+	&:after{
+	    content: "";
+	    position: absolute;
+	    top: 0px;
+	    bottom: 0px;
+	    left: 100%;
+	    width: 8px;
+	    z-index: 1050;
+		#gradient > .horizontal(fade(@black, 25%); fade(@black, 0%); 0%; 100%);
+	}
+}
+
+.navigator {
+	
+	height:100%;
+	.unselectable();
+	
+	.nav-sidebar {
+		
+		position: absolute;
+		top: @header-height;
+		z-index: @zindex-sidenav;
+		
+		width: @navigator-width;
+		height: 100%;
+		background-color: @navigator-bg;
+
+	}
+	
+	
+	a.menu-item {
+		cursor:pointer;
+	}	
+	
+	.popout-panel {
+		
+		
+		display: block;
+		position:absolute;
+		height:100%;
+		margin:0;
+		padding: 0;
+		top:0;
+		bottom:0;
+		left: (@navigator-width - @popout-panel-default-width);
+		z-index:@zindex-menu-panel;
+		width: @popout-panel-default-width;	
+		visibility: hidden;
+		
+		#btnAddSmartFolder {
+		  position: relative;
+		  top: 30px;
+		  float: right;
+		  cursor: pointer;	
+		  font-weight: 500;	  
+		}
+		
+		&.open {
+			
+			left: @navigator-width;
+			visibility: visible;
+					
+			&.wide {			
+				width: @popout-panel-wide-width;			
+			}
+			
+		}
+		
+		
+		.popout-panel-style();
+		
+		.close-button {
+			position: absolute;
+		    top: 20px;
+		    right: 20px;
+			color: @black;
+			
+			
+			&:hover {
+				color: #FFF;
+			}
+		}
+		
+		.popout-container {
+			position:relative;
+			width:100%;
+			height:100%;
+			padding: (@header-height - @font-size-h2 - 40px) 20px 20px;
+			overflow-x:hidden;
+			overflow-y:auto;
+		}
+		
+		h2 {
+			
+			color: #FFF;
+			margin: 13px 0 14px;
+			font-size: @font-size-h1;
+			
+		}
+		
+		
+		
+		
+	}	
+		
+	#mediaPathTree {
+		
+		ul {
+			> li {
+				margin-top: 5px;
+				span.nodeLabel.root {
+					display: inline;
+					text-transform: none;
+					color: #FFF;
+					height: auto;
+					line-height: auto;
+				}
+				&:first-child {
+					margin-top: 0;
+				}
+			}			
+		}
+	}
+	
+}

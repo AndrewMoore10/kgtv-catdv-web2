@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>CatDV</short-name>
+	<uri>/catdv</uri>
+	<description>CatDV Tag library</description>
+
+	<tag>
+		<name>get</name>
+		<tag-class>squarebox.catdv.web.tags.GetTag</tag-class>
+		<tei-class>squarebox.catdv.web.tags.GetTagVariableInfo</tei-class>
+		<attribute>
+			<name>path</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+    <tag>
+        <name>if</name>
+        <tag-class>squarebox.catdv.web.tags.ConditionalTag</tag-class>
+        <attribute>
+            <name>isTrue</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+       <attribute>
+            <name>isFalse</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+	<tag>
+		<name>pageheader</name>
+		<tag-class>squarebox.catdv.web.tags.PageHeaderTag</tag-class>
+		<variable>
+			<name-given>ROOT</name-given>
+			<variable-class> java.lang.String </variable-class>
+		</variable>
+		<variable>
+			<name-given>theme</name-given>
+			<variable-class>java.lang.String</variable-class>
+		</variable>
+		<attribute>
+			<name>pageScript</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>pageClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>loginPage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name> browseDatabase </name>
+		<tag-class>squarebox.catdv.servlet.DatabaseIteratorTag</tag-class>
+		<variable>
+			<name-given> catalog </name-given>
+			<variable-class> squarebox.catdv.servlet.WebObject </variable-class>
+		</variable>
+		<variable>
+			<name-given> rowcount </name-given>
+			<variable-class> java.lang.Integer </variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+		<attribute>
+			<name>order</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name> queryDatabase </name>
+		<tag-class>squarebox.catdv.servlet.QueryIteratorTag</tag-class>
+		<variable>
+			<name-given> catalog </name-given>
+			<variable-class> squarebox.catdv.servlet.WebObject </variable-class>
+		</variable>
+	</tag>
+
+	<tag>
+		<name> clip </name>
+		<tag-class> squarebox.catdv.servlet.ClipTag </tag-class>
+		<variable>
+			<name-given> clip </name-given>
+			<variable-class> squarebox.catdv.servlet.WebObject </variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name> catalog </name>
+		<tag-class>squarebox.catdv.servlet.CatalogTag</tag-class>
+		<variable>
+			<name-given> catalog </name-given>
+			<variable-class> squarebox.catdv.servlet.WebObject </variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+		<variable>
+			<name-given> rowcount </name-given>
+			<variable-class> java.lang.Integer </variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name> doQuery </name>
+		<tag-class>squarebox.catdv.servlet.DoQueryTag</tag-class>
+		<variable>
+			<name-given> rowcount </name-given>
+			<variable-class> java.lang.Integer </variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<name> clipBasket </name>
+		<tag-class>squarebox.catdv.servlet.ClipBasketTag</tag-class>
+		<variable>
+			<name-given> rowcount </name-given>
+			<variable-class> java.lang.Integer </variable-class>
+			<scope>AT_BEGIN</scope>
+		</variable>
+	</tag>
+
+	<tag>
+		<name> sendEmail </name>
+		<tag-class>squarebox.catdv.servlet.SendEmailTag</tag-class>
+	</tag>
+
+	<tag>
+		<name> cliplist </name>
+		<tag-class>squarebox.catdv.servlet.ResultSetIteratorTag</tag-class>
+		<variable>
+			<name-given> clip </name-given>
+			<variable-class> squarebox.catdv.servlet.WebObject </variable-class>
+		</variable>
+	</tag>
+
+	<tag>
+		<name> serverStats </name>
+		<tag-class>squarebox.catdv.servlet.ServerStatsTag</tag-class>
+	</tag>
+
+</taglib>

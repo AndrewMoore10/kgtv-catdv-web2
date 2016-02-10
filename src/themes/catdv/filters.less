@@ -1,0 +1,36 @@
+//
+// CatDV filters
+// --------------------------------------------------
+
+
+.btn {
+	
+	&.btn-filter {
+		
+		.button-variant(@btn-primary-color; @btn-primary-bg; transparent);
+		
+		position:relative;
+		border-radius: 10px;
+		padding: 0 22px 0 10px;
+		color: #FFF;
+		
+		> span.catdvicon-close {
+			position:absolute;
+			top:-2px;
+			right:0;
+			height:20px;
+		}
+	}
+}
+
+#activeFiltersPanel {
+	padding: 16px 11px;
+	
+	position:absolute;
+	top: (@header-height + (60 * 5));
+	z-index: @zindex-sidenav;
+	
+	.btn-filter {
+	    margin: 2px 4px;
+	}
+}

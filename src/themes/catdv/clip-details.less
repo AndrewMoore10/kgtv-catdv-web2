@@ -1,0 +1,238 @@
+//
+// Clip Details View
+// --------------------------------------------------
+
+table.details {
+    border-collapse: collapse;
+    width: 100%;
+
+    &.inset {
+        margin: 20px 8px 0px 8px;
+    }
+
+    td,
+    th {
+        padding: 3px 0;
+        text-align: left;
+    }
+
+    tr {
+        vertical-align: top;
+        
+        input[type=text], 
+        input[type=date], 
+        input[type=time], 
+        input[type=datetime] {
+            width: 100%;
+            border: 1px solid transparent;
+            padding-left: 4px;
+        }
+    
+        input[type=radio],
+        input[type=checkbox] {
+            margin-right: 4px;
+        }
+    
+        input[type=radio]:not(:first-child),
+        input[type=checkbox]:not(:first-child) {
+            margin-left: 10px;
+        }
+        
+        input,
+        select,
+        textarea {
+           color: @detail-field-color;
+           background-color: @detail-field-bg; 
+        }
+        
+        input.shadow {
+            color: fade(@detail-field-color, 33%);
+        }
+        
+        textarea {
+            width: 100%;
+            border: 1px solid transparent;
+            padding-left: 0px;
+        }
+    
+        select {
+            width: 100%;
+            border: 1px solid transparent;
+            padding-left: 0px;
+        }
+        
+        option {
+            background-color: @input-bg;
+        }
+        
+        .dropDownWrapper {
+            position: relative;
+        }
+        
+        .dropdown-list {
+            > .input  {
+                width: 100%;
+                border: 1px solid transparent;
+                
+                > .arrow {
+                    border-top-color: @detail-field-color;
+                }
+                
+                &:hover,&.focus {
+                    border: 1px solid @link-hover-color;
+                }
+           }           
+            > .popup {      
+                background: @detail-dropdown-bg;
+            }
+        }
+    
+        input.editable {
+            border: 1px solid fade(@link-hover-color, 10%);
+        }
+        select.editable {
+            border: 1px solid fade(@link-hover-color, 10%);
+        }
+        textarea.editable {
+            border: 1px solid fade(@link-hover-color, 10%);
+        }
+        
+        &:hover {
+            input.editable {
+                border: 1px solid @link-hover-color;
+            }
+            select.editable {
+                border: 1px solid @link-hover-color;
+            }
+            textarea.editable {
+                border: 1px solid @link-hover-color;
+            }
+        }
+        
+        .star.deselected {
+            color: fade(@detail-field-color, 15%);
+        }
+    }
+
+    th {
+        font-weight: 600;
+        white-space: nowrap;
+        width: 1%;
+        padding-right: 15px;
+        .unselectable();
+        
+    }
+    
+    tr.readonly th, tr.readonly td {
+       color: @gray;
+    }
+
+    
+}
+
+table.history {
+	th {
+		font-size: smaller;
+		border-bottom: 1px solid #CCCCCC;
+	}
+
+	td {
+		border: 0;
+		font-size: smaller;
+	}
+}
+
+.ratings {
+	span {
+	   cursor: pointer;
+	   font-size: 18px;	   
+	}
+	.unselectable();
+}
+
+/***** Event Markers *********/
+
+.eventMarkerTimeline {
+    margin-top: 4px;
+    padding-bottom: 8px;
+    .header {
+        height: 24px;
+        padding: 4px;
+        font-size: 13px;
+        padding: 4px;
+        cursor: pointer;
+        
+        .description {
+            font-size: smaller;
+            font-style: italic;
+            margin-left: 10px;
+            text-decoration: none;
+        }
+        .buttons a {
+            margin-left: 8px;
+        }
+        
+        .timecode {
+            font-style: italic;
+            font-size: 11px;
+        }
+        
+        .title {
+            margin-right: 10px;
+        }
+    }
+    .timeline {
+        height: 4px;
+        background-color: @gray;
+        cursor: pointer;
+    }
+    &.selected {
+        background-color: fade(@selected-color, 20%);
+        
+        .header {
+            
+            font-weight:700;
+            
+        }
+    }
+    .range {
+        height: 4px;
+        background-color: @link-color;
+    }
+    .mark,
+    .mark-in,
+    .mark-out {
+        width:12px;
+        top: -4px;
+        padding: 0;
+        background-color: transparent;
+        
+        &:before {
+            content: ' ';
+            display:block;
+            width:12px;
+            height:12px;
+            background-color: #FFF;
+            border:2px solid @gray-dark;
+            .rotate(45deg);
+        }
+    }
+
+    .mark-in,
+    .mark-out {
+        visibility: hidden;
+    }
+
+    &.selected .mark-in,
+    &.selected .mark-out {
+    
+        visibility:visible;
+    }
+
+    .mark.disabled {
+    
+    }
+
+
+}
+

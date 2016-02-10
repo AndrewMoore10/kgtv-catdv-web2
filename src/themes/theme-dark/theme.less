@@ -1,0 +1,64 @@
+//
+// CatDV Web Client - Dark Theme
+// --------------------------------------------------
+
+//Import core Bootstrap styles
+@import "../bootstrap-3.2.0/bootstrap.less";
+
+//Set colours and other variables
+@import "variables.less";
+
+//Import fonts
+@import "fonts.less";
+
+// CatDV components
+@import "../catdv/mixins.less";
+@import "../catdv/bootstrap-overrides.less";
+@import "../catdv/icons.less";
+@import "../catdv/controls.less";
+@import "../catdv/animations.less";
+@import "../catdv/pages.less";
+@import "../catdv/navigator.less";
+@import "../catdv/filters.less";
+@import "../catdv/clip-list.less";
+@import "../catdv/clip-details.less";
+@import "../catdv/media-player.less";
+@import "../catdv/sequence-editor.less";
+@import "../catdv/query-builder.less";
+@import "../catdv/admin.less";
+@import "../catdv/misc.less";
+
+
+// Only relevant for 'dark' themes
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: @input-color;
+}
+
+table.details {
+    .dropDownWrapper {
+        position: relative;
+        
+/*        &:after {
+            position: absolute;
+            right: 4px;
+            top: 8px;
+            content: "";
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 2px;
+            vertical-align: middle;
+            border-top: 4px solid;
+            border-right: 4px solid transparent;
+            border-left: 4px solid transparent;
+            color: black;
+        }
+*/
+    }
+}
+

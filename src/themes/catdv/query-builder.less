@@ -1,0 +1,108 @@
+//
+// CatDV query builder (Advanced Search)
+// --------------------------------------------------
+
+.queryBuilder {
+	background-color: inherit;
+	
+	.btn {
+		.catdvicon {
+			color: @link-color;
+		}
+		.catdvicon-remove {
+			color: @btn-danger-bg;
+		}		
+		&:hover {
+			.catdvicon {
+				color: darken(@link-color, 10%);
+			}
+			.catdvicon-remove {
+				color: darken(@btn-danger-bg, 10%);
+			}				
+		}
+	}
+	
+	.termsPanel {
+	    margin-bottom: 10px;
+	    
+	    .queryTerm {
+	        margin-bottom: 8px;
+	    }
+	
+	    label, select, input, .auto-suggest {
+	        margin-right: 8px;
+	    }   
+	    .input > input {
+	       margin-right: 0px;
+	    }
+        .field-list {
+           width: 170px;
+        }
+        
+        .dropdown-list {
+            > .input > input.preview {
+                color: fade(@input-color, 33%);
+            }
+            > .popup {      
+                > .item {
+                    &.special {
+                        font-style: italic;
+                        font-weight: bold;
+                    }           
+                }          
+            }
+        }
+	}
+	
+	.andTermsPanel {	
+		> .queryTerm {	
+			margin-bottom: 10px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	
+	.panel {
+		
+		margin-bottom: 0;
+		
+		&.panel-default,
+		&.panel-default > .panel-heading {
+			border-color:transparent;
+		}
+		
+	}
+	
+	.form-group {
+		margin-right: 10px;
+		
+		&:last-child {
+			
+			margin-right: 0;
+		}
+	}
+	
+}
+
+
+
+#btnAdvancedSearch,
+#btnAddAndTerm,
+#btnAddOrTerm {
+	
+	padding: @padding-base-vertical 0;
+	color: #FFF;
+	
+	.catdvicon {
+		top:5px;
+	}	
+}
+
+#btnSearch {
+	
+	padding-top:5px;
+	padding-bottom:6px;
+	
+}
+

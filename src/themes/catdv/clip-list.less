@@ -1,0 +1,279 @@
+//
+// CatDV clip list view
+// --------------------------------------------------
+
+h3.loadingMessage {
+    margin: 10px 0px 0px 20px;  
+}
+
+
+#clipListPanel {
+	
+	position: relative;
+	
+	.clipListHeader {
+		
+		position: absolute;
+		top: 0px;
+		height: (@header-height - @navbar-height);
+		width: 100%;
+		
+		.viewControls {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+			
+		#listTitle {
+			position: absolute;
+			left: 10px;
+			bottom:15px;
+			right: 230px;
+			padding: 4px @padding-base-horizontal;
+			margin: 0;
+			white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            span {
+                font-weight: 400;
+                margin-left: 8px;
+            }
+		}
+	}
+
+	.clipListContent {
+		position: absolute;
+		top: (@header-height - @navbar-height);
+		width: 100%;
+		bottom: 0px
+	}
+}
+
+.viewControls {
+	> .btn-group {
+		margin-left: 2px;
+		.btn {
+			.button-variant(fade(@text-color, 50%); fade(@body-bg, 50%); transparent);
+			&.btn-active {
+				color: @text-color;
+				background-color: @body-bg;
+				.box-shadow(none);
+			}
+		}
+	}
+}
+
+/******** Clip List View Styles ********/
+
+#tableView {
+}
+
+/******** Clip Grid View Styles ********/
+
+.gridView {
+        
+    .cell {
+        margin: 10px 10px 24px;
+        padding: 10px;
+        background-color: @grid-cell-bg;
+        border: 1px solid @grid-cell-border;
+        font-size: @font-size-small;
+        .box-shadow(1px 1px 3px 1px @grid-shadow-color);
+        
+        cursor:pointer;
+        
+        > div {
+            
+            width: 100%;
+            margin-bottom: 10px;
+            overflow: hidden;
+            text-align: left;
+            > img {
+                max-width:100%;
+                max-height:100%;
+            }
+        }
+        
+        &:hover {
+            background-color: fade(@selected-color, 7%);
+        }
+        &.selected, &.selected:hover {
+            background-color: lighten(@selected-color, 20%); /* Fallback for browsers without transparency */
+	        background-color: fade(@selected-color, 20%);
+        }
+                
+        &.small {
+            padding: 5px;
+            width: @small-thumb-width;
+            > div {
+                height: ceil((@small-thumb-width - 10px) * (3/4) );
+                > span {
+                    height: 14px;
+                    font-size: 10px;
+                }
+            }
+        }
+        &.medium {
+            width: @medium-thumb-width;
+            > div {
+                height: ceil((@medium-thumb-width - 20px) * (3/4) );
+            }
+        }
+        &.large {
+            width: @large-thumb-width;
+            > div {
+                height: ceil((@large-thumb-width - 20px) * (3/4) );
+            }
+        }
+        &.huge {
+            width: @huge-thumb-width;
+            > div {
+                height: ceil((@huge-thumb-width - 20px) * (3/4) );
+            }
+        }
+    }
+}
+
+/******** Clip Filmstrip View Styles ********/
+
+.filmstripView {
+    
+    .filmstripRow {
+        
+        .unselectable();
+        
+        padding:10px 20px 0;
+
+        &:after {
+            content: '';
+            display:block;
+            height: 1px;
+            background-color:@table-border-color;
+
+        }
+        &:hover {
+            background-color: fade(@selected-color, 7%);
+        }
+        &.selected, &.selected:hover {
+            background-color: lighten(@selected-color, 20%); /* Fallback for browsers without transparency */
+	        background-color: fade(@selected-color, 20%);
+        }
+                
+        &:first-child {
+            margin-top: 10px;
+        }
+
+        &:last-child {
+            margin-bottom: 0px;
+            &:after {
+                background-color: transparent;
+            }
+        }
+
+        > .header {
+            overflow: hidden;
+            margin-right:10px;
+        }
+
+        > .filmstrip {
+                
+            > .thumbnails {
+                
+                padding:0;
+                margin-bottom: 10px;
+                background-color: @filmstrip-cell-bg;
+                
+                &:before,
+                &:after {
+                    content: '';
+                    height:15px;
+                    display:block;
+                    background: url(../img/filmstrip_hole.png) center top repeat-x @filmstrip-cell-bg;
+                    background-size: 12px 15px;
+                }
+                
+            
+                img {
+                    border-top: 0px;
+                    border-bottom: 0px;
+                    margin: 0px;
+                    margin-right:1px;
+                    padding: 0px;
+                    vertical-align: bottom;
+                    /* eliminates extra pixels below image that browser leaves for decenders(!) */
+                }
+            }
+        }
+    }
+    .small {        
+        .header {
+            width: 140px;
+            height: 50px;
+            font-size: 10px;
+        }
+        .filmstrip .thumbnails {
+            &:before,
+            &:after {
+                background-size: 6px 8px;
+                height:8px;         
+            }
+            img {
+                height: 32px;
+            }
+        }
+        img.still {
+            height: 44px;
+            margin-bottom: 8px;
+        }   
+    } 
+    .medium {
+        .header {
+            width: 150px;
+            height: 66px;
+            font-size: 12px;
+        }
+        .filmstrip .thumbnails {
+            &:before,
+            &:after {
+                background-size: 10px 12px;
+                height:12px;            
+            }
+            img {
+                height: 48px;
+            }   
+        } 
+        img.still {
+            height: 68px;
+            margin-bottom: 8px;
+        }   
+    }
+    .large {
+        .header {
+            width: 180px;
+            height: 98px;
+        }
+        .filmstrip .thumbnails img {
+            height: 80px;
+        }
+        img.still {
+            height: 90px;
+            margin-bottom: 8px;
+        }
+    } 
+    .huge {
+        .header {
+            width: 200px;
+            height: 120px;
+        }
+        .filmstrip .thumbnails img {
+            height: 102px;
+        }   
+        img.still {
+            height: 112px;
+            margin-bottom: 8px;
+        }   
+    }
+}
+
+

@@ -1,0 +1,210 @@
+//
+// CatDV sequence editing view
+// --------------------------------------------------
+
+
+#sequenceEditPage .clipViewPage .topPanel  {
+    padding-bottom: 20px;
+}
+
+#sequenceEditPage .clipViewPage .content  {
+    overflow-x: hidden;
+    padding: 0px;
+}
+
+.seq-timeline {
+	position: relative;
+	background-color: @timeline_bg;
+
+	.scale-container {
+		position: relative;
+		height: 30px;
+	    border-top: 1px solid @gray-darker;
+		background-color: @timeline_bg;
+		
+		
+		.scale {
+			position: absolute;
+			overflow: hidden;
+			left: 150px; /* same as label width */
+			right: 0px;
+			height: 100%;
+			.unselectable();
+			
+			.legend {
+				position: absolute;
+			    font-size: 12px;
+			    line-height: 30px;
+			}
+		}
+	}
+	
+}
+
+.playhead {
+	position: absolute;
+	top: 0px;
+	width: @playhead-width;
+	height: 100%;
+
+	.head {
+		display:block;
+		position: absolute;
+		width: 100%;
+		height: 30px;
+		font-size: 9px;
+		text-align: center;
+		vertical-align: middle;
+	    font-size: 12px;
+	    font-weight: bold;
+		line-height: 30px;
+		background-color: @link-color;
+		color: #FFF;
+		border-radius: 4px;
+		
+		.unselectable();
+		/* ideal cursor is grab but only available in Chrome/Safari - alternative is cursor: col-resize */
+		cursor: -webkit-grab; 
+		cursor: -moz-grab;
+		
+		&:active {
+			cursor: -webkit-grabbing; 
+			cursor: -moz-grabbing;
+		}
+	}
+	.rule {
+		display:block;
+		position: absolute;
+		left: (@playhead-width / 2);
+		top: 0px;
+		bottom: 0px;
+		width: 2px;
+		height: 100%;
+		background-color: @link-color;
+	}
+}
+
+.track-container {
+	position: relative;
+	height: 100px;
+	margin-top: 20px;
+	background-color: @timeline_bg;
+
+	.track-label {
+		position: absolute;
+		display: inline-block;
+		width: 150px;
+		height: 100%;
+		text-align: center;
+		vertical-align: middle;
+		line-height: 100px;
+	}
+
+	.track {
+		position: absolute;
+		display: inline-block;
+		height: 100%;
+		left: 150px;
+		right: 0px;
+
+		.item {
+			position: absolute;
+			height: 100%;
+			width: 100px;
+		    border-collapse: collapse;
+		    border: 1px solid @timeline_bg;
+			
+			
+			&.selected {
+                border: 1px solid @timeline_selected_border;
+			}
+
+			&.deselected {
+				opacity: .3;
+			}
+			
+		}
+
+	}
+
+}
+
+#addItemPanel {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	width: 70%;
+	z-index: 1010;
+	
+	#leftPanel {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: @navigator-width;
+		height: 100%;
+		padding: 0px;
+		
+		#logo {
+			display: inline-block;
+			width: @navigator-width;
+			height: @navbar-height;
+			background: @logo-small no-repeat center @brand-primary;
+		}
+
+		#navigatorPanel {
+			padding: 0;
+			margin: 0;
+			margin-top:-5px;
+			
+			.nav-sidebar {
+			     top: 60px;
+			}
+		}		
+	}
+
+
+	#mainPanel {
+
+		position: absolute;
+		top: 0px;
+		left: @navigator-width;
+		right: 0px;
+		bottom: 0px;
+		
+		#clipListPanel {
+
+			position: absolute;
+			width: 100%;
+			height: 100%;
+	
+			.popout-panel-style ();
+	
+			.clipListContent {
+				background-color: @body-bg;
+				bottom: 60px;
+			}
+		}
+		
+		footer {
+				position: absolute;
+				bottom: 0px;
+				height: 60px;
+				width: 100%;
+				padding: 10px 10px;
+				text-align: right;
+			}
+		
+	}
+
+	.clipListHeader {
+		height: 60px;
+		
+		#listTitle {
+			color: #FFF;
+		}
+		
+	}
+	
+}
+

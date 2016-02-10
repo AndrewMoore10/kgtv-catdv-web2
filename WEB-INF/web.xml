@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app version="2.4" 
+    xmlns="http://java.sun.com/xml/ns/j2ee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee  http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <context-param>
+      <param-name>rest.api.url</param-name>
+      <param-value>/catdv-web2/api</param-value>
+    </context-param>
+    <context-param>
+      <param-name>rest.api.js</param-name>
+      <param-value>catdv.RestApi</param-value>
+    </context-param>
+
+    <!-- REST API Servlet -->
+    <servlet>
+        <servlet-name>restAPIInfo</servlet-name>
+        <servlet-class>squarebox.catdv.restapi.InfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>restAPIInfo</servlet-name>
+        <url-pattern>/api/info/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>restAPI</servlet-name>
+        <servlet-class>squarebox.catdv.restapi.CatDVRESTService</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>restAPI</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>media</servlet-name>
+        <servlet-class>squarebox.catdv.restapi.MediaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>restAPIInfo</servlet-name>
+        <url-pattern>/media/*</url-pattern>
+    </servlet-mapping>
+ 
+    <!-- Define the default session timeout for your application,
+         in minutes.  From a servlet or JSP page, you can modify
+         the timeout for a particular session dynamically by using
+         HttpSession.getMaxInactiveInterval(). -->
+
+    <session-config>
+      <session-timeout>30</session-timeout>    <!-- 30 minutes -->
+    </session-config>
+
+    <listener>
+        <listener-class>squarebox.catdv.restapi.logic.SessionManager</listener-class>
+    </listener>
+
+    <welcome-file-list>
+        <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
+    
+</web-app>

@@ -1,0 +1,5 @@
+<Context path="/catdv-web2"  sessionCookiePath="/catdv-web2" >
+	<!-- Create an access log for this site -->
+	<Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+  		prefix="catdv.web2." suffix=".log" pattern="combined" resolveHosts="true"/>
+</Context>

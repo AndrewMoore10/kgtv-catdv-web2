@@ -1,0 +1,39 @@
+//
+// CatDV animation effects
+// --------------------------------------------------
+
+@media (min-width: @screen-lg-min) {
+	
+	.navigator {
+		.popout-panel {
+			.transition(~"visibility 0s linear 0.25s, left .25s ease-out, width .25s ease-out");
+			&.open {
+				.transition(~"visibility 0s linear 0s, left .25s ease-out, width .25s ease-out");
+				&.wide {
+					.transition(width .25s ease-out);
+				}
+			}
+			
+			.close-button {
+				.transition(padding-right .25s ease-out);
+				&:hover {
+					padding-right:12px;
+				}
+			}
+		}
+	}
+	
+	.nav-sidebar > li > a {
+		.transition(padding-right .25s ease-out);
+		&:hover {
+			padding-right:7px;
+		}
+	}
+	
+	div.treeView ul > li span.nodeLabel.root > .catdvicon-expand,
+	div.treeView ul > li .discloser {
+		
+		.transition(transform .1s ease-out);
+		
+	}			
+}

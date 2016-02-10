@@ -1,0 +1,61 @@
+.navbar-input-group {
+	font-size: 0px; /*removes whitespace between button and input*/
+	
+	input {
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+
+	.btn {
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
+		border-left: 0px;
+	}
+}
+
+.glyph-rotate-90 {
+	.rotate(90deg);
+}
+
+.glyph-rotate-270 {
+	.rotate(270deg);
+}
+
+
+.dropContainer {
+	width:100%;
+	height:100%;
+	padding-bottom:60px;
+	overflow:auto;
+	
+	&:before {
+		content:'';
+		width:100%;
+		height:100%;
+		position:absolute;
+		z-index:100;
+		display:none;
+		.box-shadow(inset 0px 0px 15px 2px @link-color);
+		background-color: fade(@selected-color, 20%);	
+	}
+	
+	&.highlight {
+		&:before {
+			display:block;
+		}
+	}
+}
+
+
+input.editableTitle {
+   border: 0px;
+   color: @headings-color;
+   font-size: @font-size-h4;
+   padding: 4px;
+   display: block;
+   width: 100%;
+}
+
+.noselect {
+    .unselectable();
+}

@@ -1,0 +1,630 @@
+// Override Bootstrap styles here
+
+
+
+//
+// Page header
+// -------------------------
+
+.page-header {
+  > h1 {
+      color: @black;
+  }
+}
+
+
+
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Mixin for generating new styles
+.btn-styles(@btn-color: #555) {
+    
+    border-color:@btn-color;
+    border-bottom-color: darken(@btn-color,20%);
+
+  &:hover,
+  &:focus  {
+    background-color: darken(@btn-color, 12%);
+    background-position: 0 -15px;
+  }
+
+  &:active,
+  &.active {
+    background-color: darken(@btn-color, 12%);
+    border-color: darken(@btn-color, 14%);
+  }
+
+  &:disabled,
+  &[disabled] {
+    background-color: fade(@btn-color, 15%);
+    background-image: none;
+    border-color: transparent;
+  }
+  
+}
+
+// Common styles
+.btn {
+    background-image: none;
+    border-radius:0;
+    border-bottom-width:1px;
+    
+    &,
+    &:active,
+    &.active {
+      &:focus {
+      outline:none;
+      }
+    }
+    &.btn-compact {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    &.btn-tight {
+        padding: 0;
+    }   
+}
+
+// Apply the mixin to the buttons
+.btn-default { 
+    .btn-styles(@btn-default-bg);   
+    border-width:0px;   
+}
+.btn-primary { .btn-styles(@btn-primary-bg); }
+.btn-success { .btn-styles(@btn-success-bg); }
+.btn-info    { .btn-styles(@btn-info-bg); }
+.btn-warning { .btn-styles(@btn-warning-bg); }
+.btn-danger  { .btn-styles(@btn-danger-bg); }
+.btn-link {
+    font-weight: @btn-font-weight;
+    &:hover,
+    &:focus {
+         text-decoration: none;
+     }
+}
+
+// Compact button Sizes
+.btn-compact {
+    
+    &.btn-lg {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    &.btn-sm {
+        padding-left: 3px !important;
+        padding-right: 3px !important;
+    }
+    &.btn-xs {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+}
+
+
+
+//
+// Labels
+// --------------------------------------------------
+
+.label, label {
+  font-weight: @label-font-weight;
+}
+
+
+//
+// Checkboxes / radio controls
+// --------------------------------------------------
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  position: relative;
+  margin-left: 0px;
+}
+
+
+.radio label, .checkbox label
+{
+    padding-left: 0;
+}
+
+
+.bootstrap-checkbox {
+  > button.btn {
+    padding: @checkbox-padding;
+    margin-right:0.5em;
+    width: 28px;
+    border-width:0;
+    
+    &.displayAsButton {
+      width: auto;
+    }
+    &.displayAsButton > span.label-checkbox {
+      padding: 0 @checkbox-padding*2 0 @checkbox-padding;
+    }
+    &.displayAsButton > span.icon {
+      margin: @checkbox-padding/2 @checkbox-padding;
+    }
+    &.displayAsButton > span.label-prepend-checkbox {
+      padding: 0 @checkbox-padding 0 @checkbox-padding*2;
+    }
+    &.btn-large {
+      padding: 10px 0 6px 2px;
+      width: 36px;
+    }
+    &.btn-small {
+      padding: 5px 0 3px 1px;
+      width: 24px;
+    }
+    &.btn-mini {
+      padding: 4px 0 1px 1px;
+      width: 20px;
+    }
+    
+    >span.icon {
+        background-color: #FFF;
+        border-radius:50%;
+        .box-shadow(0 0 0 1px @gray);
+        top:0;
+    }
+    > span.catdvicon-tick_min {
+        color: @black;
+    }
+    &:hover {
+        > span.icon {
+            .box-shadow(0 0 0 1px @gray-dark);
+        }
+    }   
+  }
+  > .btn.btn-link {
+    text-decoration: none;
+  }
+  > .label-prepend-checkbox {
+    padding-right: @checkbox-padding;
+  }
+  > .label-checkbox {
+    padding-left: @checkbox-padding;
+  }
+  > .label-prepend-checkbox, .label-checkbox {
+    font-weight:normal;
+  }
+  &.disabled > [class^="label-"],
+  > .btn[disabled] {
+    cursor: not-allowed;
+  }
+  &.button.btn > span.cb-icon-check,
+  &.disabled button.btn:hover > span.cb-icon-check,
+  &.disabled button.btn:active > span.cb-icon-check {
+    background-position: 0 -1px;
+  }
+  button.btn:hover > span.cb-icon-check,
+  button.btn:focus > span.cb-icon-check,
+  button.btn:active > span.cb-icon-check {
+    background-position: 0 -25px;
+  }
+  button.btn > span.cb-icon-check-empty,
+  &.disabled button.btn:hover > span.cb-icon-check-empty,
+  &.disabled button.btn:active > span.cb-icon-check-empty {
+    background-position: -24px -1px;
+  }
+  button.btn:hover > span.cb-icon-check-empty,
+  button.btn:focus > span.cb-icon-check-empty,
+  button.btn:active > span.cb-icon-check-empty {
+    background-position: -24px -25px;
+  }
+  button.btn > span.cb-icon-check-indeterminate,
+  &.disabled button.btn:hover > span.cb-icon-check-indeterminate,
+  &.disabled button.btn:active > span.cb-icon-check-indeterminate {
+    background-position: -48px -1px;
+  }
+  button.btn:hover > span.cb-icon-check-indeterminate,
+  button.btn:focus > span.cb-icon-check-indeterminate,
+  button.btn:active > span.cb-icon-check-indeterminate {
+    background-position: -48px -25px;
+  }
+}
+
+label.bootstrap-checkbox.disabled {
+  cursor:default;
+  color:#666;
+}
+
+
+//
+// Nav tabs
+// --------------------------------------------------
+
+.nav-tabs {
+  border-bottom: 3px solid @nav-tabs-border-color;
+  > li {
+    float: left;
+    // Make the list-items overlay the bottom border
+    margin-bottom: -3px;
+
+    // Actual tabs (as links)
+    > a {
+        font-weight:@btn-link-font-weight;
+      margin-right: 2px;
+      line-height: @line-height-base;
+      border-width:0;
+      border-bottom: 3px solid transparent;
+      border-radius: 0;
+      &:hover {
+        border-color: @nav-tabs-link-hover-border-color @nav-tabs-link-hover-border-color @nav-tabs-border-color;
+      }
+    }
+
+    // Active state, and its :hover to override normal :hover
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @nav-tabs-active-link-hover-color;
+        background-color: @nav-tabs-active-link-hover-bg;
+        border-width:0;
+        border-bottom: 3px solid @nav-tabs-active-link-hover-border-color;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.tab-content {
+    
+    border:1px solid @panel-default-border;
+    padding: @padding-base-vertical @padding-base-horizontal;
+}
+
+
+
+//
+// Tables
+// --------------------------------------------------
+
+td {
+    
+    font-size: @font-size-small;
+}
+
+.table {
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border-top: 1px solid @table-border-color;
+      }
+    }
+  }
+  > tbody {
+      > tr {
+          >td {
+            vertical-align:middle;
+          }
+      }
+  }
+  // Bottom align for column headings
+  > thead > tr > th {
+    border-bottom: 2px solid transparent;
+  }
+  // Account for multiple tbody instances
+  > tbody + tbody {
+    border-top: 2px solid @table-border-color;
+  }
+}
+
+// Hover effect
+//
+// Placed here since it has to come after the potential zebra striping
+
+.table-hover {
+  > tbody > tr:hover {
+    > td,
+    > th {
+      background-color: @table-bg-hover;
+    }
+  }
+}
+
+
+
+//
+// Sidebar nav
+// --------------------------------------------------
+
+.sidebar {
+    
+    background-color: @gray-lighter;
+
+}
+
+.nav-sidebar {
+    
+  
+  border-top:2px solid #FFF;
+  
+  &:first-child {
+      border-top:none;
+  }
+  
+  > li {
+      > a {
+          padding: 16px 15px 17px;
+          color: @navbar-default-link-color;
+          font-size:@font-size-sidenav;
+          
+          &:hover {
+              
+              color: @navbar-default-link-hover-color;
+          }
+          
+          > .catdvicon {
+            
+              font-size:24px;
+              top:4px;
+              margin-right:8px;
+              
+              &.catdvicon-chevron {
+                
+                  margin-right:0;
+                  color:@link-color;
+                  
+              }
+            
+          }
+         
+      }
+      
+      &.active {
+        
+          background-color:@panel-color;
+          
+          > a {
+              color:#FFF;
+              
+              > .catdvicon {
+                &.catdvicon-chevron {
+                    color:transparent;
+                }
+              }
+          }
+      }
+  }
+}
+
+
+
+//
+// Menu
+// --------------------------------------------------
+
+.menu-container {
+    
+    position:relative;
+    height:600px;
+    
+    > .row {
+        
+        margin-left:0;
+        margin-right:0;
+        
+        > .sidebar {
+        
+            margin-top: @header-height;
+        }
+    
+        > .menu-panel-container {
+    
+            padding:0;
+
+            .menu-panel {
+        
+                position:relative;
+                background-color:@panel-color;
+                width:480px;
+                height:600px;
+                overflow:scroll;
+                padding: calc(@header-height - 50px) 20px 20px;
+                margin:0;
+        
+                > h2 {
+            
+                    color:#FFF;
+            
+                }
+                
+                > .catdvicon-close_panel {
+                    
+                    position:absolute;
+                    right:0;
+                    margin:30px;
+                }
+        
+                > .panel {
+            
+                    border:none;
+                    .box-shadow(none);
+            
+                    &.collapsable {
+                
+                        > .panel-heading {
+                            cursor:pointer;
+                        }
+                
+                    }
+            
+                    &.closed {
+                
+                        margin-bottom:0;
+                
+                        > .panel-heading {
+                            > .catdvicon-expand {
+                                .rotate(0deg);
+                            }
+                        }
+                
+                        > .list-group {
+                    
+                            display:none;
+                    
+                        }
+                
+                    }
+            
+                    > .panel-heading {
+            
+                        border-top:1px solid @gray-lighter;
+                        text-transform:uppercase;
+                        .user-select(none);
+            
+                        > .catdvicon-expand {
+                
+                            font-size:24px;
+                            color:#FFF;
+                            top:-2px;
+                            .rotate(180deg);
+                    
+                        }
+                    }
+            
+                    > .list-group {
+                
+                        .box-shadow(none);
+                        .list-group-item {
+                    
+                            padding:7px 0;
+                            font-size: @font-size-sidenav;
+                    
+                            > a {
+                        
+                                color: #FFF;
+                            }
+                    
+                        }
+                
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+//
+// Images
+// --------------------------------------------------
+
+.thumbnail,
+.img-thumbnail {
+  .box-shadow(0 1px 2px rgba(0,0,0,.075));
+}
+
+
+
+//
+// Dropdowns
+// --------------------------------------------------
+
+.dropdown-menu {
+    border-radius: 0;
+    .box-shadow(0 6px 5px rgba(0,0,0,.175));
+    
+    > li a span.catdvicon {
+        
+        font-size: @font-size-large;
+        
+    }
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  #gradient > .vertical(@start-color: @dropdown-link-hover-bg; @end-color: darken(@dropdown-link-hover-bg, 5%));
+  background-color: darken(@dropdown-link-hover-bg, 5%);
+}
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  #gradient > .vertical(@start-color: @dropdown-link-active-bg; @end-color: darken(@dropdown-link-active-bg, 5%));
+  background-color: darken(@dropdown-link-active-bg, 5%);
+}
+
+
+
+//
+// Lists
+// -------------------------
+
+.list-unstyled {    
+    ul {
+         padding-left: 2em;      
+         > li {
+         }
+    }
+}
+
+//
+// Navbar
+// --------------------------------------------------
+
+.navbar-default {
+    
+    border:none;
+}
+
+.navbar-nav {
+    
+    > li > a {
+        font-weight: @btn-font-weight;
+    }
+    > li.dropdown {
+        
+        > a {
+            
+            > .catdvicon {
+                
+                float:right;
+                top:-2px;
+                
+            }
+        }
+    }
+    
+    
+} 
+
+//
+// Panels
+// --------------------------------------------------
+
+.panel {
+  .box-shadow(none);
+  
+  .panel-heading {
+      text-transform: uppercase;
+  }
+  
+  .panel-body {
+    
+      padding-top: 0;
+  }
+}
+
+
+
+
+//
+// Wells
+// --------------------------------------------------
+
+.well h5
+{
+    margin-top: -5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid @gray-dark;
+    font-weight: bold;
+}

@@ -1,0 +1,128 @@
+//
+// CatDV media player
+// --------------------------------------------------
+
+.videoPlayer {
+    background-color: #000;
+}
+
+// QuickTime plugin displays over everything else so hide it if there is a dialog showing
+.dialogShowing .quicktimePlayer {
+	visibility : hidden;
+}
+
+.playerControls {
+	position: relative;
+	font-size: 18px;
+	height: 48px;
+	padding: 8px;
+	background-color: #000;
+	color: #FFF;
+    .unselectable();
+	
+	#timeline {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		height: 10px;
+		right: 0px;
+		z-index: 0;
+		background-color: @link-hover-color;
+				
+		#selection {
+			position: absolute;
+			height: 10px;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			z-index: 5;
+			background-color: @link-color;
+		}
+
+		#playhead {
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			top: -3px;
+			left: 0px;
+			z-index: 10;
+			
+		    background-color: @link-color;
+		    border: 5px solid #fff;
+		    border-radius: 50%;
+			
+			cursor: pointer;
+			
+		}
+	}
+	
+    &.no-overlap { 
+        height: 50px;
+    
+	    #timeline { 
+	       top:3px;	
+        }
+    }
+    
+    #movieDuration {
+	    color: @gray-dark;
+	}
+
+	#controlBarLeft {
+		position: absolute;
+		left: 4px;
+		top: 18px;
+		font-size: 16px;
+	}
+
+	#controlBarRight {
+		position: absolute;
+		right: 4px;
+		top: 18px;
+		font-size: 16px;
+	}
+
+	span {
+		display: inline-block;
+	}
+
+	.playerControlButton {
+		padding: 0px 6px 0px 6px;
+		cursor: pointer;
+		color: #FFF;
+		
+		&:hover {		
+			color: @gray-dark;
+		}
+		
+		&.disabled {
+			color: @gray-darker;
+		}
+		
+		/* Any buttons in the player control bar that use glyicons don't align quite right so shift them */
+		&.glyphiconButton {
+		    font-size: 14px;
+			position: relative;
+			top: -3px;
+		}
+	}
+
+	.moveTimes {
+		position: relative;
+		top: -2px;
+		font-size: 10px;
+		.unselectable();
+		cursor: default;
+	}
+
+	#markInBtn,
+	#markOutBtn {
+		padding: 1px 6px 1px 6px;
+		font-size: 16px;
+	}
+
+	#addMarkerBtn {
+		position: relative;
+		top: 3px;
+	}
+}
