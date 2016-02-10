@@ -218,7 +218,8 @@ var logic;
         function ViewColumnFactory() {
         }
         ViewColumnFactory.createField = function (fieldDef, fieldAccesor, viewClipUrl) {
-            if (fieldDef.ID == "NM1") {
+            // if (fieldDef.ID == "NM1") {
+            if (fieldDef.ID == "U6") {
                 return new NameColumn(fieldDef, fieldAccesor, viewClipUrl);
             }
             else if ((fieldDef.ID == "MF") || (fieldDef.ID == "PF")) {
