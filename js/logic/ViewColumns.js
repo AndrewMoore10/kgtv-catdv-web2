@@ -168,7 +168,7 @@ var logic;
             this.viewClipUrl = viewClipUrl;
         }
         NameColumn.prototype.render = function (clip) {
-            return this.viewClipUrl ? "<a href='" + this.viewClipUrl + "?id=" + clip.ID + " '>" + clip.name + "</a>" : clip.name;
+            return this.viewClipUrl ? "<a href='" + this.viewClipUrl + "?id=" + clip.ID + " '>" + clip.name + "<br/>" + (clip.userFields ? clip.userFields.U6 : "") + "</a>" : clip.name;
         };
         return NameColumn;
     })(ViewColumn);
@@ -218,8 +218,7 @@ var logic;
         function ViewColumnFactory() {
         }
         ViewColumnFactory.createField = function (fieldDef, fieldAccesor, viewClipUrl) {
-            // if (fieldDef.ID == "NM1") {
-            if (fieldDef.ID == "U6") {
+            if (fieldDef.ID == "NM1") {
                 return new NameColumn(fieldDef, fieldAccesor, viewClipUrl);
             }
             else if ((fieldDef.ID == "MF") || (fieldDef.ID == "PF")) {
