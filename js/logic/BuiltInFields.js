@@ -1723,14 +1723,14 @@ var logic;
             "isMultiValue": false,
             "isList": false
         },
-        "U5": {
-            "ID": "U5",
+        "U6": {
+            "ID": "U6",
             "memberOf": "clip.userFields",
-            "identifier": "U5",
+            "identifier": "U6",
             "name": "Slug",
             "description": "Slug from iNews",
             "fieldType": "text",
-            "isBuiltin": true,
+            "isBuiltin": false,
             "canQuery": true,
             "isCalculated": false,
             "isEditable": true,
