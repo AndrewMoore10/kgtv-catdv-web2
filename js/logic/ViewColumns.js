@@ -66,13 +66,14 @@ var logic;
         };
         /** The columns for a concise view (text only). */
         ViewManager.DEFAULT_CONCISE_COLUMNS = [
-            "TY2",
+            "P1",
+            "NM1",
             "U6",
-            "I1",
-            "O1",
-            "D1",
+            // "I1",
+            // "O1",
+            // "D1",
             "FF",
-            "STS",
+            // "STS",
             "NT"
         ];
         /** The columns for a normal view (with poster). */
@@ -80,13 +81,14 @@ var logic;
             "P1",
             "TY2",
             "NM1",
-            "BN",
-            "I1",
-            "O1",
-            "D1",
+            "U6",
+            // "BN",
+            // "I1",
+            // "O1",
+            // "D1",
             "FF",
-            "RD1",
-            "STS",
+            // "RD1",
+            // "STS",
             "NT"
         ];
         /** The columns for detailed view */
