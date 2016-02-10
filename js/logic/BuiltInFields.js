@@ -1725,7 +1725,7 @@ var logic;
         },
         "U6": {
             "ID": "U6",
-            "memberOf": "clip.userFields",
+            "memberOf": "clip",
             "identifier": "U6",
             "name": "Slug",
             "description": "Slug from iNews",
