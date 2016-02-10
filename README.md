@@ -1,7 +1,2 @@
 # kgtv-catdv-web2
-<<<<<<< HEAD
-# kgtv-catdv-web2
-# kgtv-catdv-web2
-# kgtv-catdv-web2
-=======
->>>>>>> ab8f61c1196d333ae30a701e0deaf11a0600f74c
+This is a customised web interface for squarebox's catdv server 6.10.5 built for KGTV's mastercat server

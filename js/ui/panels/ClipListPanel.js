@@ -461,7 +461,7 @@ var ui;
                 }
                 params["cached"] = this.useCache;
                 // TODO: should check which view columns we have to see if we need user fields or metadata
-                params["include"] = "userfields,metadata,thumbnails";
+                params["include"] = "userFields,metadata,thumbnails";
                 $catdv.getClips(params, function (resultSet) {
                     _this.useCache = true;
                     callback(resultSet);

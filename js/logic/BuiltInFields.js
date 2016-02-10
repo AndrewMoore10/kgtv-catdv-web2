@@ -1722,6 +1722,22 @@ var logic;
             "isMandatory": false,
             "isMultiValue": false,
             "isList": false
+        },
+        "U5": {
+            "ID": "U5",
+            "memberOf": "clip.userFields",
+            "identifier": "name",
+            "name": "Slug",
+            "description": "Slug from iNews",
+            "fieldType": "text",
+            "isBuiltin": true,
+            "canQuery": true,
+            "isCalculated": false,
+            "isEditable": true,
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isList": false,
+            "isSortable": true
         }
     };
 })(logic || (logic = {}));
