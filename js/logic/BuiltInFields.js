@@ -1726,7 +1726,7 @@ var logic;
         "U5": {
             "ID": "U5",
             "memberOf": "clip.userFields",
-            "identifier": "name",
+            "identifier": "U5",
             "name": "Slug",
             "description": "Slug from iNews",
             "fieldType": "text",
