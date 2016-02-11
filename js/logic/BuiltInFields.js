@@ -1741,6 +1741,22 @@ var logic;
             "isList": false,
             "width": 250,
             "isSortable": true
+        },
+        "U7": {
+            "ID": "U7",
+            "memberOf": "clip",
+            "identifier": "U7",
+            "name": "Script",
+            "description": "HTML formatted Scripts",
+            "fieldType": "text",
+            "isBuiltin": false,
+            "canQuery": false,
+            "isCalculated": false,
+            "isEditable": false,
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isList": false,
+            "isSortable": false
         }
     };
 })(logic || (logic = {}));

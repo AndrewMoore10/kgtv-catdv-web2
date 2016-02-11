@@ -107,7 +107,7 @@ var logic;
             "MD1",
             "RD1",
             "STS",
-            "NT",
+            "U7",
         ];
         ViewManager.CONCISE_COLUMNS = null;
         ViewManager.NORMAL_COLUMNS = null;
