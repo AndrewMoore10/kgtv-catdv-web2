@@ -70,8 +70,6 @@ var controls;
                 this.updateColumnWidths();
                 this.loadData(0);
             }
-            $(".dt-wrapper").append("<div id='script-preview'><div>");
-            this.scriptPreview = $("#script-preview");
             $(window).resize(function (evt) {
                 _this.updateColumnWidths();
             });
@@ -81,6 +79,7 @@ var controls;
             this.columns = columns;
             this.renderGrid();
             this.updateColumnWidths();
+            this.scriptPreview = $("#dt-preview");
             this.loadData(pagingOffset);
         };
         DataTable.prototype.onSelectionChanged = function (selectionChangedHandler) {
@@ -130,6 +129,7 @@ var controls;
             html += "</tbody></table></div>\n";
             // Footer (Paging)
             html += "<div class='dt-footer'><div>";
+            html += "<div class='dt-preview'><div>";
             //  Close Wrapper
             html += "</div>";
             this.$element.html(html);
