@@ -128,8 +128,9 @@ var controls;
             html += "<tr><td colspan=" + this.columns.length + "><h3 class='loadingMessage'>Loading...</h3></td></tr>\n";
             html += "</tbody></table></div>\n";
             // Footer (Paging)
-            html += "<div class='dt-footer'><div>";
-            html += "<div class='dt-preview'><div>";
+            html += "<div class='dt-footer'></div>";
+            // Script Previewer window
+            html += "<div class='dt-preview'></div>";
             //  Close Wrapper
             html += "</div>";
             this.$element.html(html);
