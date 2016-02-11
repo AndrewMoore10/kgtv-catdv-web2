@@ -109,6 +109,7 @@ var logic;
             "isMandatory": false,
             "isMultiValue": false,
             "isList": false,
+            "width": 200,
             "isSortable": true
         },
         "NM2": {
@@ -926,6 +927,7 @@ var logic;
             "isMandatory": false,
             "isMultiValue": false,
             "isList": true,
+            "width": 250,
             "isSortable": true
         },
         "FR": {
@@ -1737,6 +1739,7 @@ var logic;
             "isMandatory": false,
             "isMultiValue": false,
             "isList": false,
+            "width": 250,
             "isSortable": true
         }
     };
