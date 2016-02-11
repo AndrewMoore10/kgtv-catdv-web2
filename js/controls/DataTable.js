@@ -70,6 +70,8 @@ var controls;
                 this.updateColumnWidths();
                 this.loadData(0);
             }
+            $(document).append("<div id='script-preview'><div>");
+            this.scriptPreview = $("#script-preview");
             $(window).resize(function (evt) {
                 _this.updateColumnWidths();
             });
