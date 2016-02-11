@@ -74,7 +74,7 @@ var logic;
             // "D1",
             "FF",
             // "STS",
-            "NT"
+            "U7"
         ];
         /** The columns for a normal view (with poster). */
         ViewManager.DEFAULT_NORMAL_COLUMNS = [
@@ -90,7 +90,7 @@ var logic;
             "FF",
             // "RD1",
             // "STS",
-            "NT"
+            "U7"
         ];
         /** The columns for detailed view */
         ViewManager.DEFAULT_FULL_COLUMNS = [
