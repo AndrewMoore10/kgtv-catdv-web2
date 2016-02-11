@@ -73,6 +73,9 @@ var controls;
             $(window).resize(function (evt) {
                 _this.updateColumnWidths();
             });
+            $(document).keyup(function(e) {
+              if (e.keyCode == 27) $('.selected').removeClass("selected");   // esc
+            });
         }
         DataTable.prototype.setColumns = function (columns, pagingOffset) {
             if (pagingOffset === void 0) { pagingOffset = 0; }
