@@ -194,7 +194,7 @@ var controls;
                     var rowData = this.resultSet.items[row];
                     html += "<tr id='" + this.rowID(row) + "'>";
                     for (var col = 0; col < columns.length; col++) {
-                        html += "<td>" + this.renderCellValue(rowData, columns[col]) + "</td>";
+                        html += "<td class='col_"+columns[col].fieldDef.ID + "'>" + this.renderCellValue(rowData, columns[col]) + "</td>";
                     }
                     html += "</tr>";
                 }

@@ -79,7 +79,7 @@ var logic;
         /** The columns for a normal view (with poster). */
         ViewManager.DEFAULT_NORMAL_COLUMNS = [
             "P1",
-            "TY2",
+            // "TY2",
             "NM1",
             "U6",
             // "BN",
@@ -95,15 +95,16 @@ var logic;
         /** The columns for detailed view */
         ViewManager.DEFAULT_FULL_COLUMNS = [
             "P1",
-            "TY2",
+            // "TY2",
             "NM1",
-            "TY1",
-            "BN",
-            "TP",
-            "I1",
-            "O1",
-            "D1",
+            // "TY1",
+            // "BN",
+            // "TP",
+            // "I1",
+            // "O1",
+            // "D1",
             "FF",
+            "MD1",
             "RD1",
             "STS",
             "NT",
