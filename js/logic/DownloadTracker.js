@@ -3,6 +3,14 @@
         //     this.api_get("clips/" + clipId, { include: "proxyPath" }, success_callback, failure_callback);
         // };
 
+//         {
+//     "ID": "3562",
+//     "status": "updated via API 3 (0001)",
+//     "userFields":{
+//         "U6" : "Rattlesnake Kid"
+//     }
+// }
+
 var $catdv = catdv.RestApi;
 
 var downloadTracker = function(){
@@ -11,8 +19,11 @@ var downloadTracker = function(){
   var functions = {
     updateDownloadCount : function(clipID, cb, fcb){
       $catdv.getClip(clipID, function(result){
+        var downlaodCount = (result.userFields && result.userFields.U12 ? parseInt(result.userFields.U12) : 0);
+        result.userFields.U12 = downlaodCount + 1;
+        $catdv.saveClip(result, cb, fcb);
         console.log(result);
-        cb();
+        // cb();
       }, fcb);
     }
   };
