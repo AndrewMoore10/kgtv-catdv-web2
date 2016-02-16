@@ -468,7 +468,7 @@ var logic;
         __extends(MediaPathField, _super);
         function MediaPathField(fieldID, fieldDef, $parent) {
             _super.call(this, fieldID, fieldDef);
-            this.div = new Element($("<div id='" + this.fieldID + "'></div>").appendTo($parent));
+            this.div = new Element($("<div id='" + this.fieldID + "' class='field_"+ this.fieldDef.ID +"'></div>").appendTo($parent));
         }
         MediaPathField.prototype.setEditable = function (editable) {
             // never editable
