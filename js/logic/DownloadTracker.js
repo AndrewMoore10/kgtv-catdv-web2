@@ -10,12 +10,32 @@ var tracker = function(){
   var getDownloads = function(clipID, cb, fcb){
     $catdv.getClip(clipID, cb, fcb);
   }
-
+  var updateDownloadCount = function(clipID, cb, fcb){
+    $catdv.getClip(clipID, function(result){
+      console.log(result);
+    }, fcb);
+  }
 
 
 }
 
 $(document).on('click', '.field_MF a', function(event){
-  alert("Download clicked!");
+  alert("Download clicked! " + getUrlParameter("id"));
   console.log(event);
+  // tracker.updateDownloadCount()
 })
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
