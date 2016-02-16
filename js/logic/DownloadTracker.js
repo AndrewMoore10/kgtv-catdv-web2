@@ -21,6 +21,7 @@ var tracker = function(){
 
 $(document).on('click', '.field_MF a', function(event){
   alert("Download clicked! " + getUrlParameter("id"));
+  console.log(tracker);
   console.log(event);
   tracker.updateDownloadCount(getUrlParameter("id"),
     function(){ console.log("success"); },
