@@ -5,7 +5,7 @@
 
 var $catdv = catdv.RestApi;
 
-var tracker = function(){
+var downloadTracker = function(){
   var downloadsField = "U12";
   var downloadedByField = "U13";
   var functions = {
@@ -18,6 +18,7 @@ var tracker = function(){
   };
   return functions;
 }
+var tracker = downloadTracker();
 
 $(document).on('click', '.field_MF a', function(event){
   alert("Download clicked! " + getUrlParameter("id"));
