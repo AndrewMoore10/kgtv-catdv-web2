@@ -7,14 +7,13 @@ var tracker = function(){
   var $catdv = catdv.RestApi;
   var downloadsField = "U12";
   var downloadedByField = "U13";
-  var getDownloads = function(clipID, cb, fcb){
-    $catdv.getClip(clipID, cb, fcb);
-  }
-  var updateDownloadCount = function(clipID, cb, fcb){
-    $catdv.getClip(clipID, function(result){
-      console.log(result);
-      cb();
-    }, fcb);
+  return {
+    var updateDownloadCount = function(clipID, cb, fcb){
+      $catdv.getClip(clipID, function(result){
+        console.log(result);
+        cb();
+      }, fcb);
+    }
   }
 
 
