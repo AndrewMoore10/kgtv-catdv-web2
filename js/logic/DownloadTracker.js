@@ -3,20 +3,20 @@
         //     this.api_get("clips/" + clipId, { include: "proxyPath" }, success_callback, failure_callback);
         // };
 
+var $catdv = catdv.RestApi;
+
 var tracker = function(){
-  var $catdv = catdv.RestApi;
   var downloadsField = "U12";
   var downloadedByField = "U13";
-  return {
-    var updateDownloadCount = function(clipID, cb, fcb){
+  var functions = {
+    updateDownloadCount : function(clipID, cb, fcb){
       $catdv.getClip(clipID, function(result){
         console.log(result);
         cb();
       }, fcb);
     }
-  }
-
-
+  };
+  return functions;
 }
 
 $(document).on('click', '.field_MF a', function(event){
