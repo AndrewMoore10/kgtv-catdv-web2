@@ -13,6 +13,7 @@ var tracker = function(){
   var updateDownloadCount = function(clipID, cb, fcb){
     $catdv.getClip(clipID, function(result){
       console.log(result);
+      cb();
     }, fcb);
   }
 
@@ -22,7 +23,10 @@ var tracker = function(){
 $(document).on('click', '.field_MF a', function(event){
   alert("Download clicked! " + getUrlParameter("id"));
   console.log(event);
-  // tracker.updateDownloadCount()
+  tracker.updateDownloadCount(getUrlParameter("id"),
+    function(){ console.log("success"); },
+    function(){ console.log("failed"); }
+  )  
 })
 
 var getUrlParameter = function getUrlParameter(sParam) {
