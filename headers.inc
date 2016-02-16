@@ -35,6 +35,7 @@
 <script type="text/javascript" src="js/logic/ServerSettings.js"></script>
 <script type="text/javascript" src="js/logic/DetailPanels.js"></script>
 <script type="text/javascript" src="js/logic/ViewColumns.js"></script>
+<script type="text/javascript" src="js/logic/DownloadTracker.js"></script>
 
 <script type="text/javascript" src="js/ui/panels/NavbarLoginMenu.js"></script>
 
