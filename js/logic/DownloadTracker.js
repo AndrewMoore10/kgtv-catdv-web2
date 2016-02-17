@@ -19,8 +19,10 @@ var downloadTracker = function(){
   var functions = {
     updateDownloadCount : function(clipID, cb, fcb){
       $catdv.getClip(clipID, function(result){
-        var downlaodCount = (result.userFields && result.userFields.U12 ? parseInt(result.userFields.U12) : 0);
-        result.userFields.U12 = downlaodCount + 1;
+        var downloadCount = (result.userFields && result.userFields.U12 ? parseInt(result.userFields.U12) : 0);
+        var downloadBy = (result.userFields && result.userFields.U13 ? result.userFields.U13 : "");
+        result.userFields.U12 = downloadCount + 1;
+        result.userFields.U13 = downloadBy + "<p>" + window.currentUser + " @ " + moment().format() + "</p>\n";
         $catdv.saveClip(result, cb, fcb);
         console.log(result);
         // cb();
@@ -32,12 +34,16 @@ var downloadTracker = function(){
 var tracker = downloadTracker();
 
 $(document).on('click', '.field_MF a', function(event){
-  alert("Download clicked! " + getUrlParameter("id"));
+  // alert("Download clicked! " + getUrlParameter("id"));
   console.log(tracker);
   console.log(event);
   tracker.updateDownloadCount(getUrlParameter("id"),
-    function(){ console.log("success"); },
-    function(){ console.log("failed"); }
+    function(){
+      // console.log("success"); 
+    },
+    function(){ 
+      // console.log("failed"); 
+    }
   )  
 })
 
