@@ -144,7 +144,9 @@ var catdv;
                         _this.handle_response(reply, success_callback, failure_callback);
                     },
                     error: function (jqXHR, textStatus, errorThrown) {
-                        console.log("api_get error");
+                        console.log("api_get error: " + textStatus);
+                        console.log(errorThrown);
+                        console.log(jqXHR);
                         _this.handle_failure(jqXHR, failure_callback);
                     },
                     complete: function(){
