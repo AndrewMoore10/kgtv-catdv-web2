@@ -144,7 +144,11 @@ var catdv;
                     },
                     error: function (jqXHR, textStatus, errorThrown) {
                         _this.handle_failure(jqXHR, failure_callback);
+                    },
+                    complete: function(){
+                        console.log("api_get complete");
                     }
+
                 });
             }
             catch (e) {
