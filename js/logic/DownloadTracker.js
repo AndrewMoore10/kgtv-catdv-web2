@@ -42,7 +42,7 @@ $(document).on('click', '.field_MF a', function(event){
   tracker.updateDownloadCount(getUrlParameter("id"),
     function(){
       console.log("success"); 
-      window.location(href);
+      window.location = href;
     },
     function(){ 
       console.log("failed"); 
