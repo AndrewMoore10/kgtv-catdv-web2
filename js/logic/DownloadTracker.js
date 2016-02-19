@@ -19,7 +19,7 @@ var downloadTracker = function(){
   var functions = {
     updateDownloadCount : function(clipID, cb, fcb){
       $catdv.getClip(clipID, function(result){
-        console.log(result);
+        // console.log(result);
         var downloadCount = (result.userFields && result.userFields.U12 ? parseInt(result.userFields.U12) : 0);
         var downloadBy = (result.userFields && result.userFields.U13 ? result.userFields.U13 : "");
         result.userFields.U12 = downloadCount + 1;
@@ -41,10 +41,11 @@ $(document).on('click', '.field_MF a', function(event){
   event.preventDefault();
   tracker.updateDownloadCount(getUrlParameter("id"),
     function(){
-      console.log("success"); 
+      // console.log("success"); 
       window.location = href;
     },
     function(){ 
+      window.location = href;
       console.log("failed"); 
     }
   )  
