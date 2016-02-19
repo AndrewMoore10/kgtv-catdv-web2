@@ -136,7 +136,9 @@ var catdv;
                     type: "GET",
                     url: this.getApiUrl(path),
                     headers: {
-                        "CatDV-Client": "WC2"
+                        "CatDV-Client": "WC2",
+                        "Pragma": "no-cache",
+                        "Cache-Control":  'no-cache'
                     },
                     data: data,
                     success: function (reply) {
