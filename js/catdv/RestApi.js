@@ -141,6 +141,7 @@ var catdv;
                         "Cache-Control":  'no-cache'
                     },
                     data: data,
+                    dataType: 'json',
                     success: function (reply) {
                         console.log("api_get success");
                         _this.handle_response(reply, success_callback, failure_callback);
