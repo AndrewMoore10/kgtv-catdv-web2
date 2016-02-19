@@ -140,9 +140,11 @@ var catdv;
                     },
                     data: data,
                     success: function (reply) {
+                        console.log("api_get success");
                         _this.handle_response(reply, success_callback, failure_callback);
                     },
                     error: function (jqXHR, textStatus, errorThrown) {
+                        console.log("api_get error");
                         _this.handle_failure(jqXHR, failure_callback);
                     },
                     complete: function(){
