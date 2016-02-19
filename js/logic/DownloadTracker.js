@@ -37,15 +37,18 @@ $(document).on('click', '.field_MF a', function(event){
   // alert("Download clicked! " + getUrlParameter("id"));
   // console.log(tracker);
   // console.log(event);
+  var href = event.target.href
+  event.preventDefault();
   tracker.updateDownloadCount(getUrlParameter("id"),
     function(){
       console.log("success"); 
+      window.location(href);
     },
     function(){ 
       console.log("failed"); 
     }
   )  
-  return true;
+  return false;
 })
 
 var getUrlParameter = function getUrlParameter(sParam) {
